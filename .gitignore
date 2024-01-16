@@ -1,0 +1,9 @@
+_init.sh
+.DS_Store
+**.pyc
+cache/**
+__pycache__/**
+.streamlit
+data/**
+.vscode
+_local_variables.py
