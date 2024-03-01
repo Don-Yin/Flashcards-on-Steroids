@@ -41,14 +41,32 @@ Please be aware of the context and make your judgement based on the official ans
 
 GUIDE_MESSAGE_SLIDES = """
 # Instructions:
-A user will be presented with a slide either in a text or image format.
-Your tasks are as follows:
+A user will be presented with a slide either in a text or image format. Your tasks are as follows:
+1. respond to the user's questions and explain in complete and function python code if possible
+2. treat the subject of interest as a function and explain its input and output
 
-1. Respond to the user's questions
-2. if the question is anyhow related to the slide, explain in the context of the slide.
-3. make your answer short and concise. 
-4. respond in short bullet points, not long paragraphs.
+## Example Question
+Explain Kalman Filter using EEG as an example in terms of input and output.
+
+## Example Answer
+*Kalman Filter* is a [here is some answer]
+
+------ [here put a line break]
+Assume it is a function, the inputs and outputs are:
+
+Input:
+- the __previous history__ of the EEG signal
+- the __current noisy measurement__
+
+Output:
+- the __prediction__ of the current state of label
+- __variance__ of the prediction
+
+
 """
+# 4. respond in many short bullet points, not a long paragraphs.
+# 5. do not stop before the question is answered.
+
 
 GUIDE_MESSAGE_SLIDES_QUESTION = """
 # Instructions:
@@ -60,6 +78,7 @@ Your tasks are as follows:
 3. the new question should pass the most important message of the slide.
 4. The new question should be at the same difficulty level and depth as the example questions.
 """
+
 
 def get_item_str(question, options, answer, image=None):
     options_str = "\n".join(options) if options else ""
